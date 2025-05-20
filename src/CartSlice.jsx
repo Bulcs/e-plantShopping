@@ -31,14 +31,6 @@ export const CartSlice = createSlice({
         }
       })
     },
-    getHowManyItems: (state, action) => {
-      let qtd  = 0;
-
-      state.items.filter(item => {
-        qtd += item.quantity;
-      });
-      return qtd;
-    }
   },
 });
 
