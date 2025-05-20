@@ -31,9 +31,17 @@ export const CartSlice = createSlice({
         }
       })
     },
+    getHowManyItems: (state, action) => {
+      let qtd  = 0;
+
+      state.items.filter(item => {
+        qtd += item.quantity;
+      });
+      return qtd;
+    }
   },
 });
 
-export const { addItem, removeItem, updateQuantity } = CartSlice.actions;
+export const { addItem, removeItem, updateQuantity, getHowManyItems } = CartSlice.actions;
 
 export default CartSlice.reducer;
